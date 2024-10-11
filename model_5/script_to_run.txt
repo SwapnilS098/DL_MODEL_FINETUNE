@@ -1,0 +1,25 @@
+python3 DL_model_fine_tuning.py \
+    --dataset /home/swapnil/Narrowband_compression/container_for_compressai/datasets/data_6k \
+    --epochs 50 \
+    --batch-size 32 \
+    --test-batch-size 32 \
+    --patch-size 512 512 \
+    --learning-rate 1e-5 \
+    --aux-learning-rate 5e-4 \
+    --lambda 0.3 \
+    --cuda \
+    --save
+
+
+
+Fine tuning on the 6k images dataset of the drone from github
+
+Original model is the BMSHJ2018 with quality of 4 and MS_SSIM
+
+results on the datset of 5 images
+
+SSIM_org: 
+PSNR_org: 
+
+SSIM_fine: 
+PSNR_fine: 

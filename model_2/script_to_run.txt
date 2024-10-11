@@ -1,0 +1,24 @@
+python3 DL_model_fine_tuning.py \
+    --dataset /app/datasets/fine_tuning_image_dataset \
+    --epochs 100 \
+    --batch-size 16 \
+    --test-batch-size 32 \
+    --patch-size 512 512 \
+    --learning-rate 1e-5 \
+    --aux-learning-rate 5e-4 \
+    --lambda 0.3 \
+    --cuda \
+    --save
+
+
+
+
+Original model is the BMSHJ2018 with quality of 4 and MS_SSIM
+
+results on the datset of 5 images
+
+SSIM_org: 0.9311902483450633
+PSNR_org: 30.525918017606273
+
+SSIM_fine: 0.9522384381928962
+PSNR_fine: 32.142818036037006

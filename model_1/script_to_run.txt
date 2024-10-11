@@ -1,0 +1,20 @@
+python3 DL_model_fine_tuning.py \
+    --dataset /app/datasets/fine_tuning_image_dataset \
+    --epochs 50 \
+    --batch-size 16 \
+    --test-batch-size 32 \
+    --patch-size 512 512 \
+    --learning-rate 1e-5 \
+    --aux-learning-rate 5e-4 \
+    --lambda 0.2 \
+    --cuda \
+    --save
+
+
+Loss was SSIM instead of the MSE
+
+#results are
+
+model fine tuned SSIM = 0.767 PSNR=24.29
+model BMSHJ 6, SSIM =0.953 PSNR=32.12
+~                                        

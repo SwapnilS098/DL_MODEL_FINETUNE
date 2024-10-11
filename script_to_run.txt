@@ -1,0 +1,30 @@
+python3 DL_model_fine_tuning.py \
+    --dataset /app/datasets/data_6k_augmented \
+    --epochs 500 \
+    --batch-size 32 \
+    --test-batch-size 32 \
+    --patch-size 512 512 \
+    --learning-rate 1e-5 \
+    --aux-learning-rate 5e-4 \
+    --lambda 0.3 \
+    --cuda \
+    --save
+
+
+lambda 0.3 provides great performance in terms of the SSIM and the PSNR of the image 
+reconstruction. 
+The compression ratio might have compromised. But that is not yet taken into the c
+consideration because of the ability to control the second stage of the compression
+using the traditional codecs.
+
+
+
+Original model is the BMSHJ2018 with quality of 4 and MS_SSIM
+
+results on the datset of 5 images
+
+SSIM_org: 
+PSNR_org: 
+
+SSIM_fine: 
+PSNR_fine: 
