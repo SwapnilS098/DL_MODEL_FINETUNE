@@ -29,6 +29,7 @@ from compressai.losses import RateDistortionLoss
 from compressai.optimizers import net_aux_optimizer
 from compressai.datasets import ImageFolder
 from combined_loss_function import CombinedLoss
+#from combined_loss_function_new import CombinedLoss
 print("Modules are imported")
 
 class AverageMeter:
@@ -167,15 +168,15 @@ def main(argv):
         random.seed(args.seed)
 
     train_transforms = transforms.Compose(
-        #[transforms.RandomCrop(args.patch_size), transforms.ToTensor()]
-        [transforms.Resize((512,512)),
-        transforms.ToTensor()]
+        [transforms.RandomCrop(args.patch_size), transforms.ToTensor()]
+        #[transforms.Resize((512,512))]#,
+        #transforms.ToTensor()]
     )
 
     test_transforms = transforms.Compose(
-        #[transforms.CenterCrop(args.patch_size), transforms.ToTensor()]
-        [transforms.Resize((512,512)),
-        transforms.ToTensor()]
+        [transforms.CenterCrop(args.patch_size), transforms.ToTensor()]
+        #[transforms.Resize((512,512))]#,
+        #transforms.ToTensor()]
     )
 
     train_dataset = ImageFolder(args.dataset, split="train", transform=train_transforms)

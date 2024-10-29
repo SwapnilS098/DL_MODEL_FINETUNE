@@ -1,0 +1,31 @@
+python3 DL_model_fine_tuning_combined_loss.py \
+    --dataset /app/datasets/data_6k_augmented \
+    --epochs 500 \
+    --batch-size 15 \
+    --test-batch-size 15 \
+    --patch-size 512 512 \
+    --learning-rate 1e-3 \
+    --aux-learning-rate 5e-2 \
+    --lambda_rd 0.3 \
+    --lambda_feature 0.1 \
+    --cuda \
+    --save
+
+
+lambda 0.3 provides great performance in terms of the SSIM and the PSNR of the image 
+reconstruction. 
+The compression ratio might have compromised. But that is not yet taken into the c
+consideration because of the ability to control the second stage of the compression
+using the traditional codecs.
+
+
+
+Original model is the BMSHJ2018 with quality of 4 and MS_SSIM
+
+results on the datset of 5 images
+
+SSIM_org: 0.9311788217865835
+PSNR_org: 30.52477364667096
+
+SSIM_fine: 0.966010119169907
+PSNR_fine: 30.192574236079032
